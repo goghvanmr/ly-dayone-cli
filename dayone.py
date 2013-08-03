@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import plistlib
 import os
 import getpass

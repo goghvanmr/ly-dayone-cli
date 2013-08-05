@@ -1,0 +1,9 @@
+tell application "Reminders"
+	if list "%s" of application "Reminders" exists then
+		-- do nothing
+	else
+		make new list with properties {name:"%s"}
+	end if
+	
+	make new reminder with properties {body:"%s", name:"%s", container:list "%s"}
+end tell

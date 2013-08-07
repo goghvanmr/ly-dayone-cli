@@ -8,7 +8,6 @@ import Foundation
 from config import *
 
 JOURNAL_ENTRIES_PATH = '/Library/Mobile Documents/5U8NS4GX82~com~dayoneapp~dayone/Documents/Journal_dayone/entries/' 
-#JOURNAL_ENTRIES_PATH = '/Desktop/entries/' 
 
 def export_todo_to_reminder():
 	username = getpass.getuser()

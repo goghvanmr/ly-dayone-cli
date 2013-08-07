@@ -2,8 +2,11 @@
 import argparse
 import reminder
 
+from config import TAG_TO_EXPORT 
+
 parser = argparse.ArgumentParser()
-parser.add_argument('-r', '--reminder', help = 'Export TODO entires to reminder.app', action= 'store_true')
+help_text = 'Export entries with %s tag to Reminder.app' % TAG_TO_EXPORT
+parser.add_argument('-r', '--reminder', help = help_text, action= 'store_true')
 args = parser.parse_args()
 
 if args.reminder:

@@ -1,4 +1,4 @@
-#	Reminder configuration
+#   Reminder configuration
 
 TAG_TO_EXPORT = 'TODO'
 TAG_AFTER_EXPORT = 'TODO_REMINDER'

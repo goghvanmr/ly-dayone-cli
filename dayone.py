@@ -12,6 +12,6 @@ parser.add_argument('-r', '--reminder', help = help_text, action= 'store_true')
 args = parser.parse_args()
 
 if args.reminder:
-	reminder.export_todo_to_reminder()
+    reminder.export_todo_to_reminder()
 else:
-	parser.print_help()
+    parser.print_help()

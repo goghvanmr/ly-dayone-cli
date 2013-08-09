@@ -12,22 +12,22 @@ JOURNAL_ENTRIES_PATH = '/Library/Mobile Documents/5U8NS4GX82~com~dayoneapp~dayon
 def export_todo_to_reminder():
 	username = getpass.getuser()
 	entry_folder_path = '/Users/' + username + JOURNAL_ENTRIES_PATH  
-
+	
 	for root, dirs, files in os.walk(entry_folder_path):
 		for f in files:
 			plist_file = root + f
 
-			if not plist_file.endswith('.doentry'): continue 
+			if not plist_file.endswith('.doentry'): continue
 
 			pl = plistlib.readPlist(plist_file)
 
 			if 'Tags' not in pl: continue
 
-			if TAG_TO_EXPORT in pl['Tags']:
+			if TAG_TO_EXPORT in pl['Tags']: 
 				entry_text = pl['Entry Text'].replace('"', '\\"')
 
 				reminder_name = entry_text.splitlines()[0] 
-				reminder_body = entry_text 
+				reminder_body = entry_text
 				reminder_list = REMINDER_LIST
 
 				reminder_command_template = open('reminder.template').read()

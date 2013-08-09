@@ -7,12 +7,12 @@ import Foundation
 
 from config import *
 
-JOURNAL_ENTRIES_PATH = '/Library/Mobile Documents/5U8NS4GX82~com~dayoneapp~dayone/Documents/Journal_dayone/entries/' 
+JOURNAL_ENTRIES_PATH = '/Library/Mobile Documents/5U8NS4GX82~com~dayoneapp~dayone/Documents/Journal_dayone/entries/'
 
 def export_todo_to_reminder():
 	username = getpass.getuser()
-	entry_folder_path = '/Users/' + username + JOURNAL_ENTRIES_PATH  
-	
+	entry_folder_path = '/Users/' + username + JOURNAL_ENTRIES_PATH
+
 	for root, dirs, files in os.walk(entry_folder_path):
 		for f in files:
 			plist_file = root + f
@@ -23,10 +23,10 @@ def export_todo_to_reminder():
 
 			if 'Tags' not in pl: continue
 
-			if TAG_TO_EXPORT in pl['Tags']: 
+			if TAG_TO_EXPORT in pl['Tags']:
 				entry_text = pl['Entry Text'].replace('"', '\\"')
 
-				reminder_name = entry_text.splitlines()[0] 
+				reminder_name = entry_text.splitlines()[0]
 				reminder_body = entry_text
 				reminder_list = REMINDER_LIST
 

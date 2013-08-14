@@ -2,16 +2,27 @@
 # -*- coding: utf-8 -*-
 
 import argparse
+
 import reminder
+import zen
 
-from config import TAG_TO_EXPORT 
+from config import TAG_TO_EXPORT
 
-parser = argparse.ArgumentParser()
-help_text = 'Export entries with %s tag to Reminder.app' % TAG_TO_EXPORT
-parser.add_argument('-r', '--reminder', help = help_text, action= 'store_true')
-args = parser.parse_args()
+def day_one():
+    reminder_help_text = 'Export entries with %s tag to Reminder.app' % TAG_TO_EXPORT
+    zen_help_text = 'Zen practice'
 
-if args.reminder:
-    reminder.export_todo_to_reminder()
-else:
-    parser.print_help()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-r', '--reminder', help = reminder_help_text, action= 'store_true')
+    parser.add_argument('-z', '--zen', help = zen_help_text, action= 'store_true')
+    args = parser.parse_args()
+
+    if args.reminder:
+        reminder.export_todo_to_reminder()
+    elif args.zen:
+        zen.practice_zen()
+    else:
+        parser.print_help()
+
+if __name__ == '__main__':
+    day_one()

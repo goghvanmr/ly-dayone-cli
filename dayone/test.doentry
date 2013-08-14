@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Creation Date</key>
+	<date>2013-03-04T02:28:35Z</date>
+	<key>Entry Text</key>
+	<string>#	Day 7
+
+今天完成 UITableView 的搜索和下拉刷新就好啦. 如果能在晚上之前完成, 晚上在找找工作什么的.</string>
+	<key>Starred</key>
+	<false/>
+	<key>Time Zone</key>
+	<string>Asia/Chongqing</string>
+	<key>UUID</key>
+	<string>0A47C09F09E340318A73714907504920</string>
+</dict>
+</plist>

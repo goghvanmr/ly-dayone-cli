@@ -13,6 +13,9 @@ def practice_zen():
     for root, dirs, files in os.walk(QUESTION_DIR):
         for f in files:
             file_path = root + f
+
+            if not question_file(file_path): continue
+
             question_plist = plistlib.readPlist(file_path)
             question, bonus, penalty = read_question_info_from(question_plist)
             answer = get_answer_from(question)
@@ -22,6 +25,9 @@ def practice_zen():
             print total_score
 
     write_total_score_into('total.score', total_score)
+
+def question_file(file_path):
+    return file_path.endswith('.question')
 
 def get_answer_from(question):
     answer = DEFAULT_ANSWER
